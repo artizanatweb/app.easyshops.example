@@ -1,6 +1,6 @@
 <p align="center">
-    <a href="https://www.artizanatweb.ro" target="_blank">
-        <img src="https://artizanatweb.ro/assets/svgs/easy.shops.logo.svg" width="200">
+    <a href="https://www.artizanatweb.ro" target="_blank" title="EASY.SHOPS">
+        <img src="https://artizanatweb.ro/assets/svgs/easy.shops.logo.svg" width="200" alt="EASY.SHOPS">
     </a>
 </p>
 
