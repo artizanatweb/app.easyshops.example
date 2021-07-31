@@ -7,6 +7,7 @@
 ## Laravel 8 RESTful API with React.js 17 frontend
 <p>The Laravel 8 <b>REST API</b> implements the following:</p>
 <ul>
+    <li>OAuth2 API authentication</li>
     <li>Multi level user access</li>
     <li>Google Maps Places API search and import</li>
     <li>Google Photos import</li>
@@ -17,10 +18,10 @@
 <br />
 <p>The <b>React 17</b> frontend implements the following:</p>
 <ul>
-    <li>Multi level user access</li>
+    <li>Responsive layout</li>
     <li>Google Map with custom pins and "drag and drop" position</li>
     <li>Google Places API search</li>
-    <li>Google Photos import</li>
+    <li>Module <b>I18next</b> used to translate from English to Romanian</li>
 </ul>
 <p>
     The <b>ReactJS</b> application can be found in <b>/resources/admin/</b>.<br />
