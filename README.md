@@ -4,11 +4,17 @@
     </a>
 </p>
 
-## EASY.SHOPS web application example
-<p>
-    Laravel 8 with React.js 17 example web application.<br />
-    The Laravel app uses Repository design pattern, API Resource, Form Request Validation and pivot table.
-</p>
+## Laravel 8 RESTful API with React.js 17 frontend
+<p>The Laravel 8 <b>REST API</b> implements the following:</p>
+    <ul>
+        <li>Multi level user access</li>
+        <li>Google Map with custom pins and "drag and drop" position</li>
+        <li>Google Places API search and import</li>
+        <li>Google Photos import</li>
+        <li>Repository design pattern</li>
+        <li>API Resources</li>
+        <li>Pivot tables</li>
+    </ul>
 <p>
     The <b>ReactJS</b> application can be found in <b>/resources/admin/</b>.<br />
     It serves as an example to show that I am accustomed with both programming styles: <b>functional based components</b> with <b>hooks</b> and <b>class based components</b>.<br />
