@@ -1,0 +1,941 @@
+// Fonts
+@import "~ubuntu-fontface/ubuntu";
+@import "~typeface-roboto/index.css";
+
+// Variables
+@import 'variables';
+
+body {
+    * {
+        font-family: Ubuntu;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .adminApplication {
+        min-height: 100vh;
+        background-color: #f1f1f1;
+    }
+}
+
+.loginScreenElement {
+    height: 100vh;
+    width: 100vw;
+    background-color: $loginScreenBg;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 1970;
+
+    .loginFormElement {
+        overflow: hidden;
+        min-height: 74px;
+        position: absolute;
+        top: calc(50% - 37px);
+
+        .appLoginForm {
+            width: 300px;
+            overflow: hidden;
+
+            .loginFormCard {
+                padding-top: 20px;
+
+                .brandName {
+                    text-align: center;
+
+                    h1 {
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .row {
+                    width: 100%;
+                    height: 20px;
+                    background-color: #a3a3a3;
+                    border-radius: 5px;
+                    margin-bottom: 10px;
+                }
+
+                .loginForm {
+                    .form-row {
+                        padding-top: 20px;
+                        &:first-child {
+                            padding-top: 10px;
+                        }
+
+                        .Mui-error {
+                            .MuiIconButton-root {
+                                svg {
+                                    fill: #ff0000;
+                                }
+                            }
+                        }
+                    }
+
+                    .form-button {
+                        padding-top: 40px;
+                        .loginButton {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .applicationLogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            width: 74px;
+            height: 74px;
+            margin: 0 auto;
+            fill: $loginScreenLogoColor;
+
+            .ring {
+                transform-origin: 50% 50%;
+                transform-box: fill-box;
+                fill: $loginScreenLogoColor;
+
+                &.loading {
+                    animation: rotation 2s linear infinite;
+                }
+            }
+        }
+    }
+
+    .rememberMe {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin: 0 !important;
+        padding-top: 10px;
+    }
+}
+
+@keyframes rotation {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.spinIcon {
+    animation: iconRotation 1s infinite linear;
+}
+
+@keyframes iconRotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-359deg);
+    }
+}
+
+.menuLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        width: 40px;
+        height: 40px;
+        fill: $loginScreenLogoColor;
+        margin-right: 10px;
+    }
+
+    h6 {
+        font-weight: 800;
+
+        span {
+            color: $loginScreenLogoColor;
+        }
+    }
+}
+
+/* CKEditor min height */
+.ck-editor__editable {
+    min-height: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .loginScreenElement {
+        background-color: $loginScreenBgDark;
+
+        .applicationLogo {
+            svg {
+                fill: $loginScreenLogoColorDark;
+
+                .ring {
+                    fill: $loginScreenLogoColorDark;
+                }
+            }
+        }
+    }
+
+    .menuLogo {
+        svg {
+            fill: $loginScreenLogoColorDarkDark;
+        }
+
+        h6 {
+            span {
+                color: $loginScreenLogoColorDarkDark;
+            }
+        }
+    }
+
+    .elementActionsDialog {
+        .saveButton {
+            color: #000000 !important;
+        }
+    }
+
+    .actionScreenForm {
+        .formRow {
+            .fileUploadSupport {
+                border: 1px dashed rgba(255, 255, 255, 0.33) !important;
+            }
+
+            &.fileRowError {
+                .fileUploadSupport {
+                    border-color: #f44336 !important;
+                }
+            }
+        }
+    }
+}
+
+.mainMessage {
+    position: fixed;
+    z-index: 2010;
+    bottom: 0;
+}
+
+.mainToolbar {
+    z-index: 5;
+
+    header {
+        position: fixed;
+    }
+
+    .logoAndName {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .applicationLogo {
+            display: none;
+            width: 40px;
+
+            svg {
+                width: 40px;
+                height: 40px;
+                fill: #ffffff;
+            }
+        }
+
+        h6 {
+            text-align: left;
+        }
+    }
+}
+
+.loadingPageContent {
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+    .pageContent {
+        min-height: 90vh;
+
+        .emptyList {
+            padding-top: 50px;
+            text-align: center;
+        }
+
+        .responseList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 20px;
+            padding-bottom: 100px;
+            justify-content: center;
+
+            .shopCard {
+                h1 {
+                    font-weight: 700;
+                    padding-bottom: 10px;
+                }
+
+                .shopCardContent {
+                    position: relative;
+
+                    .shopViewButton {
+                        position: absolute;
+                        right: 24px;
+                        top: -30px;
+
+                        svg {
+                            height: 32px;
+                            width: 32px;
+                        }
+                    }
+
+                    .withIcon {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        padding: 5px 0 0;
+                        &:first-child {
+                            padding-top: 10px;
+                        }
+
+                        p {
+                            padding-left: 10px;
+                        }
+
+                        &.startIcon {
+                            align-items: flex-start;
+                        }
+                    }
+                }
+
+                .personal {
+                    padding-bottom: 10px;
+                    h1 {
+                        padding-bottom: 0;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        .errorPageContent {
+            padding-top: 70px;
+            display: flex;
+            justify-content: center;
+
+            p {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+        }
+
+        .headerSelectElement {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 30px;
+        }
+    }
+}
+
+.pageAddButton {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.elementActionsFormPlace {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+
+    .actionScreenForm {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 90vw;
+        align-self: flex-start;
+        padding-top: 30px;
+        padding-bottom: 170px;
+
+        &.centerScreenForm {
+            align-items: center;
+        }
+
+        .formRow {
+            width: 100%;
+            max-width: 420px;
+            padding-bottom: 20px;
+
+            &.textEditorRow {
+                max-width: none;
+                width: 100%;
+                color: #2a2a2a;
+                padding-top: 10px;
+            }
+
+            .editorLabel {
+                padding-bottom: 6px;
+            }
+
+            .defaultSwitch {
+                margin: 0;
+            }
+
+            &.switchRow {
+                display: flex;
+                align-items: center;
+            }
+
+            .activeSwitch {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                margin-left: 0;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .MuiFormControlLabel-label {
+                    font-weight: 500;
+                }
+            }
+
+            .fileUploadSupport {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: 1px dashed rgba(0, 0, 0, 0.28);
+                border-radius: 5px;
+                padding-left: 10px;
+            }
+
+            .fileHoler {
+                content: '';
+                height: 120px;
+                width: 120px;
+                background-image: url('/assets/svgs/default-image.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                margin-right: 10px;
+                fill: #9c27b0;
+            }
+
+            &.fileRowError {
+                .fileUploadSupport {
+                    border-color: #ff0000;
+                }
+            }
+
+            input {
+                &[readonly] {
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        .mapSupport {
+            padding-bottom: 20px;
+            height: 600px;
+            background-color: #f2f3f4;
+        }
+
+        .fillRows {
+            padding-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+
+            @media screen and (min-width: 970px) {
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                max-width: 910px;
+            }
+
+            .formRow {
+                min-width: 320px;
+            }
+        }
+    }
+
+    &.hasFabs {
+        padding-bottom: 50px;
+
+        .imagesList {
+            padding-top: 50px !important;
+        }
+    }
+}
+
+.imageElementSupport {
+    max-width: 440px;
+    margin: 0 auto;
+
+    .MuiPaper-root {
+        padding: 10px 20px 20px;
+    }
+
+    .imageElementHeader {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+
+        p {
+            line-height: 36px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            font-size: 0.98em;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.elementCard {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+
+    .elementCardActions {
+        align-self: flex-end;
+        margin-top: auto;
+        width: 100%;
+    }
+
+    .elementStatus {
+        padding-bottom: 10px;
+        text-transform: capitalize;
+    }
+
+    b {
+        font-weight: bold;
+    }
+
+    .contentLabel {
+        text-transform: capitalize;
+    }
+
+    .shopLocations {
+        display: flex;
+        flex-direction: row;
+        padding-top: 15px;
+        padding-bottom: 8px;
+
+        .mapLocationsIcon {
+            height: 32px;
+            width: 32px;
+
+            svg {
+                g {
+                    fill: rgba(0, 0, 0, 0.87);
+
+                    @media (prefers-color-scheme: dark) {
+                        fill: #ffffff;
+                    }
+                }
+            }
+        }
+
+        p {
+            line-height: 38px;
+            padding-left: 8px;
+        }
+
+        b {
+            font-weight: 400;
+            font-size: 1.3rem;
+            line-height: 38px;
+            padding-left: 8px;
+        }
+    }
+}
+
+.elementActionsDialog {
+    .saveButton {
+        color: #ffffff;
+    }
+}
+
+.removeDialogContent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    min-width: 310px;
+    min-height: 120px;
+
+    @media screen and (min-width: 750px) {
+        min-width: 600px;
+        width: 600px;
+        min-height: 200px;
+        justify-content: center;
+    }
+
+    @media screen and (orientation: portrait) and (max-width: 500px) {
+        align-items: center;
+        flex-direction: column;
+
+        .rdcElement {
+            &:last-child {
+                padding-left: 0px !important;
+                padding-top: 10px;
+            }
+
+            img {
+                width: 100% !important;
+            }
+        }
+    }
+
+    .rdcElement {
+        &:first-child {
+            width: 40%;
+        }
+
+        &:last-child {
+            padding-left: 20px;
+            width: 100%;
+        }
+
+        img {
+            width: 160px;
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+    }
+}
+
+.viewPage {
+    margin: 0 auto;
+    max-width: 1024px;
+    min-width: 280px;
+
+    .viewPageBigImage {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        justify-content: center;
+
+        img {
+            object-fit: cover;
+            display: block;
+            background-size: cover;
+        }
+    }
+
+    .viewPageTitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &.addressTitle {
+            align-items: flex-start !important;
+        }
+
+        h1 {
+            font-weight: 500;
+            font-size: 20px;
+        }
+    }
+
+    .viewPageDescription {
+        padding-top: 10px;
+        p {
+            margin: 0;
+            //&:first-child {
+            //    margin-top: 0px;
+            //}
+        }
+    }
+
+    .viewPageListTitle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: $mainNormal;
+
+        @media (prefers-color-scheme: dark) {
+            background-color: $mainDark;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.86rem;
+            color: #ffffff;
+
+            @media (prefers-color-scheme: dark) {
+                color: #211905;
+            }
+        }
+    }
+
+    .viewPageImagesList {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-top: 20px;
+        justify-content: center;
+    }
+
+    &.userProfile {
+        .viewPageBigImage {
+            img {
+                max-height: 380px;
+            }
+        }
+    }
+
+    .viewPageContact {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+
+        @media screen and (min-width: 700px) {
+            flex-direction: row;
+        }
+
+        .withIcon {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 5px 0 0;
+            &:first-child {
+                padding-top: 10px;
+            }
+
+            p {
+                padding-left: 10px;
+            }
+
+            &.startIcon {
+                align-items: flex-start;
+            }
+
+            h3 {
+                font-weight: 600;
+                padding-left: 10px;
+                line-height: 40px;
+                margin: 0;
+            }
+        }
+    }
+
+    .viewPageLocation {
+        padding-top: 20px;
+        padding-bottom: 100px;
+    }
+}
+
+.shopDetails {
+    padding-top: 10px;
+
+    .shopState {
+        padding-top: 5px;
+        text-transform: uppercase;
+    }
+
+    .shopDetailsCard {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media screen and (min-width: 700px) {
+            flex-direction: row;
+            justify-content: space-between;
+
+            .shopLogoImage {
+                max-width: 50%;
+                max-height: 440px !important;
+            }
+
+            .shopDetailsContent {
+                min-width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-content: space-between;
+
+                .details {
+                    width: 100%;
+                }
+
+                .shopCardActions {
+                    align-self: flex-end;
+                    margin-top: auto;
+                    width: 100%;
+                }
+            }
+        }
+
+        .shopCardActions {
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+        }
+
+        .shopLogoImage {
+            max-height: 200px;
+        }
+    }
+}
+
+.shopLocationsList {
+    .emptyList {
+        padding-top: 50px;
+        text-align: center;
+        font-size: 1rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: 0.00938em;
+
+        p {
+            margin-bottom: 0;
+            margin-top: 2px;
+        }
+    }
+
+    .locationsList {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-top: 20px;
+        padding-bottom: 100px;
+        justify-content: center;
+    }
+}
+
+.bottomFabs {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 16px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    button {
+        &:first-child {
+            margin-right: 10px;
+        }
+
+        &:last-child {
+            margin-left: 10px;
+        }
+
+        svg {
+            margin-right: 8px;
+        }
+    }
+}
+
+.imagesList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+
+    @media screen and (min-width: 1500px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media screen and (max-width: 1100px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 750px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.mapSearchArea {
+    position: absolute;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    width: 80vw;
+    left: 50%;
+    margin-left: -40vw;
+    top: 10px;
+
+    @media screen and (min-width: 500px) {
+        width: 400px;
+        margin-left: -200px;
+    }
+}
+
+.placeItems {
+    width: 80vw;
+    margin-left: -40vw;
+    left: 50%;
+    position: absolute;
+    top: 70px;
+    max-height: 528px;
+    overflow-y: auto;
+
+    @media screen and (min-width: 560px) {
+        width: 500px;
+        margin-left: -250px;
+    }
+
+    .placeDetails {
+        h1 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            line-height: 1rem;
+            line-height: 1rem;
+        }
+
+        p {
+            font-size: 0.8rem;
+            line-height: 1rem;
+        }
+    }
+}
+
+#shopLocationMarker {
+    min-height: 600px;
+    height: 600px;
+}
+
+#locationMapMarker {
+    min-height: 600px;
+    height: 600px;
+}
+
+#shopLocationsMarkers {
+    min-height: 200px;
+    height: 200px;
+}
+
+.itemsTableSupport {
+    padding-top: 50px;
+
+    .nameAndDescription {
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.shopLocationsArea {
+    .shopItemsArea {
+        padding-top: 0px;
+    }
+}
+
+.cardMap {
+    padding-top: 10px;
+}

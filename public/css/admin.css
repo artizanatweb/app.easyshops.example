@@ -1,0 +1,71 @@
+#adminApp {
+    overflow-y: hidden;
+}
+
+#loader {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    opacity: 1;
+    z-index: 2999;
+}
+
+#loader.hide {
+    animation: hideLoaderElement 0.5s forwards;
+}
+
+#loader.show {
+    animation: showLoaderElement 0.5s forwards;
+}
+
+#exLogo {
+    fill: #000000;
+}
+
+#exRing {
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+    fill: #000000;
+}
+
+#exRing.loading {
+    animation: rotation 2s linear infinite;
+}
+
+@keyframes rotation {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes hideLoaderElement {
+    0% { opacity: 1; display: flex }
+    99% { opacity: 0; display: flex }
+    100% { opacity: 0; display: none; }
+}
+
+@keyframes showLoaderElement {
+    0% { opacity: 0; display: none; }
+    1% { opacity: 0; display: flex }
+    100% { opacity: 1; display: flex }
+}
+
+@media (prefers-color-scheme: dark) {
+    #loader {
+        background-color: #303030;
+    }
+
+    #exLogo {
+        fill: #ffffff;
+    }
+
+    #exRing {
+        fill: #ffffff;
+    }
+}
