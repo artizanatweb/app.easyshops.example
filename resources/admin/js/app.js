@@ -1,5 +1,3 @@
-import {services} from "./stores/actions/actionTypes";
-
 require('./bootstrap');
 
 import React from "react";
